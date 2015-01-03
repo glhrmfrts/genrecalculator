@@ -34,20 +34,16 @@ Core.register('html_actuator', function(sandbox) {
 			this.active = 0;
 			this.available = true;
 
-			//sandbox.listen('lastfm_username_entry', this.handleUsername.bind(this));
-			sandbox.listen('emo_calculator_result', this.handleResult.bind(this));
-		},
-
-		handleUsername: function(data) {
-
-			this.html.container.style.textAlign = "center";
-			this.html.container.innerHTML = '<img src="/howemo/assets/img/720.gif">';
+			sandbox.listen('genre_calculator_result', this.handleResult.bind(this));
 		},
 
 		handleResult: function(data) {
 
 			this.resultData = data;
-			this.getResultTitle();
+			if (data.error)
+				this.handleError()
+			else
+				this.getResultTitle();
 		},
 
 		getResultTitle: function() {
@@ -314,6 +310,14 @@ Core.register('html_actuator', function(sandbox) {
 				}, 200);
 				this.active = 0;
 			}
+		},
+
+		handleError: function() {
+
+			var alert = document.createElement('div');
+			alert.classList.add('alert alert-danger');
+			alert.innerHTML = '<p>Ops! It seems an error has ocurred, try again please.';
+			this.html.container.appendChild(alert);
 		},
 
 		destroy: function() {

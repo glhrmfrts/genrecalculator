@@ -230,7 +230,6 @@
   * @param {object} notification the object with notifications configs
   */
   Sandbox.prototype.notify = function(notification) {
-    console.log(Sandbox.notifications);
     for(var module in Sandbox.notifications) {
       var listening = Sandbox.notifications[module][notification.type];
       if(listening) {

@@ -1,4 +1,4 @@
-Core.extend("XHR", function(url, cb) {
+Core.extend("XHR", function(url, cb, error) {
 
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', url, false);
@@ -8,6 +8,9 @@ Core.extend("XHR", function(url, cb) {
 
 			var data = JSON.parse(xhr.responseText);
 			cb(data);
+		} else {
+
+			error();
 		}
 	}
 	xhr.send(null);

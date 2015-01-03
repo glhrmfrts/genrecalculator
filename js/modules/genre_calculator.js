@@ -29,8 +29,8 @@ Core.register('genre_calculator', function(sandbox) {
 		},
 
 		getTopGenreArtists: function() {
-			var url = 'http://ws.audioscrobbler.com/2.0/?method=tag.gettopartists&tag='+this.genre+'&api_key=ecf0412964782fd7a01500c739ea53bb&format=json&limit=100';
-			sandbox.x("XHR")(url, this.setTopGenreArtists.bind(this));
+			var url = '//ws.audioscrobbler.com/2.0/?method=tag.gettopartists&tag='+this.genre+'&api_key=ecf0412964782fd7a01500c739ea53bb&format=json&limit=100';
+			sandbox.x("XHR")(url, this.setTopGenreArtists.bind(this), this.notifyError.bind(this));
 		},
 
 		setTopGenreArtists: function(data) {
@@ -40,8 +40,8 @@ Core.register('genre_calculator', function(sandbox) {
 		},
 
 		getUserArtists: function() {
-			var url = 'http://ws.audioscrobbler.com/2.0/?method=library.getartists&api_key=ecf0412964782fd7a01500c739ea53bb&user='+ this.username +'&format=json&limit=100';
-			sandbox.x("XHR")(url, this.setUserArtists.bind(this));
+			var url = '//ws.audioscrobbler.com/2.0/?method=library.getartists&api_key=ecf0412964782fd7a01500c739ea53bb&user='+ this.username +'&format=json&limit=100';
+			sandbox.x("XHR")(url, this.setUserArtists.bind(this), this.notifyError.bind(this));
 		},
 
 		setUserArtists: function(data) {
@@ -100,8 +100,6 @@ Core.register('genre_calculator', function(sandbox) {
 			this.percentage = Math.round((this.totalMatches / this.userArtists.length) * 100);
 			this.percentage += Math.round((emoPlayCount / totalPlayCount) * 100);
 
-			console.log(emoPlayCount, totalPlayCount);
-
 			this.notifyResult(recomend);
 		},
 
@@ -115,7 +113,7 @@ Core.register('genre_calculator', function(sandbox) {
 			var self = this;
 
 			sandbox.notify({
-				type: 'emo_calculator_result',
+				type: 'genre_calculator_result',
 				data: {
 					username: self.username,
 					genre: self.genre,
@@ -124,6 +122,18 @@ Core.register('genre_calculator', function(sandbox) {
 					artistsMatches: self.artistsMatches,
 					percentage: self.percentage,
 					recomendations: recomend
+				}
+			});
+		},
+
+		notifyError: function() {
+
+			var self = this;
+
+			sandbox.notify({
+				type: 'genre_calculator_result',
+				data: {
+					error: true
 				}
 			});
 		},
