@@ -1,0 +1,218 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 8, ../sass/screen.scss */
+body {
+  background-image: url(https://unsplash.imgix.net/photo-1416512107527-34cebecbac33?q=75&fm=jpg&s=58eff2b3daa3b797fb23fcd511d843ca);
+  color: #fff !important;
+  background-attachment: fixed;
+}
+
+/* line 14, ../sass/screen.scss */
+.jumbotron {
+  border-radius: 0px 0px 10px 10px !important;
+  background: transparent !important;
+}
+/* line 17, ../sass/screen.scss */
+.jumbotron h1 {
+  font-size: 44px !important;
+}
+
+/* line 21, ../sass/screen.scss */
+.container {
+  max-width: 920px !important;
+}
+
+/* line 25, ../sass/screen.scss */
+.genre {
+  cursor: pointer;
+}
+/* line 27, ../sass/screen.scss */
+.genre#prev_genre {
+  float: left;
+}
+/* line 30, ../sass/screen.scss */
+.genre#next_genre {
+  float: right;
+}
+/* line 33, ../sass/screen.scss */
+.genre:hover {
+  opacity: 0.7;
+}
+/* line 36, ../sass/screen.scss */
+.genre:active {
+  opacity: 0.3;
+}
+
+/* line 41, ../sass/screen.scss */
+.artist-col {
+  padding: 10px;
+  margin: 10px 0px;
+  background: #337ab7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  cursor: default;
+  color: #fff;
+}
+/* line 49, ../sass/screen.scss */
+.artist-col img {
+  width: 100%;
+}
+/* line 52, ../sass/screen.scss */
+.artist-col:hover {
+  background: #2e6aa4;
+}
+/* line 55, ../sass/screen.scss */
+.artist-col a {
+  color: #fff;
+  text-decoration: none !important;
+}
+/* line 58, ../sass/screen.scss */
+.artist-col a:hover {
+  color: #ddd;
+}
+/* line 61, ../sass/screen.scss */
+.artist-col a:active {
+  color: #bbb;
+}
+/* line 65, ../sass/screen.scss */
+.artist-col .youtube {
+  color: #b11000;
+  font-size: 20px;
+}
+
+/* line 71, ../sass/screen.scss */
+.artists-compared, .artists-recomendations {
+  float: left;
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* line 77, ../sass/screen.scss */
+.artists-compared {
+  opacity: 1;
+}
+
+/* line 81, ../sass/screen.scss */
+.artists-recomendations {
+  display: none;
+  opacity: 0;
+}
+
+/* line 86, ../sass/screen.scss */
+.share {
+  float: right;
+  margin-top: -5px;
+}
+
+/* line 91, ../sass/screen.scss */
+.try-again, .artists-switch {
+  float: right;
+  text-decoration: none !important;
+  font-size: 18px !important;
+  margin-top: -4px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+@media screen and (min-width: 1024px) {
+  /* line 103, ../sass/screen.scss */
+  .artist-col img {
+    height: 160px;
+  }
+  /* line 106, ../sass/screen.scss */
+  .artist-col .lastfm_icon {
+    height: 20px;
+    width: 20px;
+    float: right;
+  }
+  /* line 111, ../sass/screen.scss */
+  .artist-col .lastfm_icon_recomend {
+    height: 20px;
+    width: 20px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  /* line 121, ../sass/screen.scss */
+  .artist-col img {
+    height: 240px;
+  }
+  /* line 124, ../sass/screen.scss */
+  .artist-col .lastfm_icon {
+    height: 40px;
+    width: 40px;
+    float: right;
+    margin-top: -20px;
+  }
+  /* line 130, ../sass/screen.scss */
+  .artist-col .lastfm_icon_recomend {
+    height: 20px;
+    width: 20px;
+  }
+}

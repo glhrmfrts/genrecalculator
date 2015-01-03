@@ -1,0 +1,139 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+body {
+	background-image: url(https://unsplash.imgix.net/photo-1416512107527-34cebecbac33?q=75&fm=jpg&s=58eff2b3daa3b797fb23fcd511d843ca);
+	color:#fff !important;
+	background-attachment:fixed;
+}
+
+.jumbotron {
+	border-radius: 0px 0px 10px 10px !important;
+	background:transparent !important;
+	h1 {
+		font-size: 44px !important;
+	}
+}
+.container {
+	max-width: 920px !important;
+}
+
+.genre {
+	cursor:pointer;
+	&#prev_genre {
+		float:left;
+	}
+	&#next_genre {
+		float:right;
+	}
+	&:hover {
+		opacity: 0.7;
+	}
+	&:active {
+		opacity: 0.3;
+	}
+}
+
+.artist-col {
+	padding: 10px;
+	margin: 10px 0px;
+	background: #337ab7;
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.5);
+	border-radius: 5px;
+	cursor:default;
+	color:#fff;
+	img {
+		width:100%;
+	}
+	&:hover {
+		background: #2e6aa4;
+	}
+	a {
+		color:#fff;
+		text-decoration: none !important;
+		&:hover {
+			color:#ddd;
+		}
+		&:active {
+			color:#bbb;
+		}
+	}
+	.youtube {
+		color:#b11000;
+		font-size: 20px;
+	}
+}
+
+.artists-compared, .artists-recomendations {
+	float:left;
+	width:100%;
+	border-radius: 10px;
+}
+
+.artists-compared {
+	opacity: 1;
+}
+
+.artists-recomendations {
+	display:none;
+	opacity: 0;
+}
+
+.share {
+	float:right;
+	margin-top: -5px;
+}
+
+.try-again, .artists-switch {
+	float:right;
+	text-decoration:none !important;
+	font-size: 18px !important;
+	margin-top: -4px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+@media screen and (min-width: 1024px) {
+
+	.artist-col {
+		img {
+			height: 160px;
+		}
+		.lastfm_icon {
+			height: 20px;
+			width: 20px;
+			float:right;
+		}
+		.lastfm_icon_recomend {
+			height: 20px;
+			width: 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 1023px) {
+
+	.artist-col {
+		img {
+			height: 240px;
+		}
+		.lastfm_icon {
+			height: 40px;
+			width: 40px;
+			float:right;
+			margin-top: -20px;
+		}
+		.lastfm_icon_recomend {
+			height: 20px;
+			width: 20px;
+		}
+	}
+}
+
+
+
+
