@@ -228,6 +228,8 @@ Core.register('html_actuator', function(sandbox) {
 			}, 500);
 
 			this.setRecomendButtonListener();
+			this.setShareButtonListener();
+			
 			if (go) {
 				this.active = 1;
 				this.html.artistsCompared.style.display = "none";
@@ -252,7 +254,7 @@ Core.register('html_actuator', function(sandbox) {
 				name: "name",
 				link: "https://glhrmfrts.github.io/genrecalculator",
 				picture: "https://glhrmfrts.github.io/genrecalculator/assets/img/og_image.png",
-				caption: "I'm "+ self.resultData.percentage +"% "+ self.resultData.genre;
+				caption: "I'm "+ self.resultData.percentage +"% "+ self.resultData.genre,
 				description: "Discover how much you are of your favorite music genre",
 				message: ""
 			});
