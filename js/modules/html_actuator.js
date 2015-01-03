@@ -29,7 +29,7 @@ Core.register('html_actuator', function(sandbox) {
 				tryAgain: '<a href="" class="try-again btn btn-default" title="Try again"><i class="repeat icon"></i></a>',
 				discover: '<button class="artists-switch btn btn-default" id="artists-switch" title="Discover"><i class="plus icon"></i></button>',
 				lastfm_icon: 'https://cdn0.iconfinder.com/data/icons/yooicons_set01_socialbookmarks/512/social_lastfm_box_red.png',
-				share: ' <div class="share"><div class="ui facebook button" id="fb_share"><i class="facebook icon"></i> Facebook</div><div class="ui twitter button"><i class="twitter icon"></i> Twitter</div></div>'
+				share: ' <div class="share"><div class="ui facebook button" id="fb_share"><i class="facebook icon"></i> Facebook</div></div>'
 			};
 			this.active = 0;
 			this.available = true;
@@ -229,7 +229,7 @@ Core.register('html_actuator', function(sandbox) {
 
 			this.setRecomendButtonListener();
 			this.setShareButtonListener();
-			
+
 			if (go) {
 				this.active = 1;
 				this.html.artistsCompared.style.display = "none";
@@ -251,10 +251,10 @@ Core.register('html_actuator', function(sandbox) {
 
 			FB.ui({
 				method: 'feed',
-				name: "name",
+				name: "I'm "+ self.resultData.percentage +"% "+ self.resultData.genre,
 				link: "https://glhrmfrts.github.io/genrecalculator",
 				picture: "https://glhrmfrts.github.io/genrecalculator/assets/img/og_image.png",
-				caption: "I'm "+ self.resultData.percentage +"% "+ self.resultData.genre,
+				caption: "Genre Calculator",
 				description: "Discover how much you are of your favorite music genre",
 				message: ""
 			});
