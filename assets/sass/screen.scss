@@ -85,7 +85,7 @@ body {
 			&:first-child {
 
 				@include border-radius(5px 0px 0px 5px);
-				width: 59.8%;
+				width: 79.8%;
 				margin-right: -2px;
 				border-right: 1px solid #ddd;
 			}
@@ -93,7 +93,7 @@ body {
 			&#genre {
 
 				@include border-radius(0px 5px 5px 0px);
-				width: 40%;
+				width: 20%;
 				margin-left: -2px;
 				border-left: none;
 			}
