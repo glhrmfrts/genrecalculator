@@ -3,7 +3,14 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-@import "compass/reset";
+@import "compass/css3";
+
+html, body {
+
+	overflow-x: hidden;
+	max-width: 100vw;
+	height: 100vh;
+}
 
 body {
 	background-image: url(https://unsplash.imgix.net/photo-1416512107527-34cebecbac33?q=75&fm=jpg&s=58eff2b3daa3b797fb23fcd511d843ca);
@@ -11,11 +18,86 @@ body {
 	background-attachment:fixed;
 }
 
+.background {
+
+	position:absolute;
+	top: 0;
+	left: 0;
+	z-index: -2;
+	width: 120vw;
+	height: 100vh;
+	overflow:hidden;
+
+	.img-container {
+
+		width: 15%;
+		height: 35%;
+		display:inline-block;
+		margin:-5px;
+		z-index: -2;
+		text-align:center;
+		vertical-align: middle;
+		overflow:hidden;
+
+		img {
+
+			width: 10%;
+			min-height: 100%;
+			padding: 45%;
+			opacity: 0;
+			@include transition(all 0.375s ease);
+
+			&.show {
+
+				opacity: 1;
+				padding: 0;
+				width: 140%;
+			}
+		}
+	}
+
+	.overlay {
+
+		position:absolute;
+		width: 120vw;
+		height: 100vh;
+		z-index: 1;
+		background-color: rgba(0,0,0,0.375);
+	}
+}
+
 .jumbotron {
 	border-radius: 0px 0px 10px 10px !important;
 	background:transparent !important;
 	h1 {
 		font-size: 44px !important;
+	}
+
+	#calculator {
+
+		.form-control {
+
+			margin-left: 0px;
+			margin-right: 0px;
+			margin-bottom: 10px;
+			display:inline-block;
+
+			&:first-child {
+
+				@include border-radius(5px 0px 0px 5px);
+				width: 59.8%;
+				margin-right: -2px;
+				border-right: 1px solid #ddd;
+			}
+
+			&#genre {
+
+				@include border-radius(0px 5px 5px 0px);
+				width: 40%;
+				margin-left: -2px;
+				border-left: none;
+			}
+		}
 	}
 }
 .container {
@@ -65,6 +147,16 @@ body {
 	.youtube {
 		color:#b11000;
 		font-size: 20px;
+	}
+}
+
+#result {
+
+	background-color: rgba(0,0,0,0.5);
+
+	&.ready {
+
+		min-height: 100vh;
 	}
 }
 

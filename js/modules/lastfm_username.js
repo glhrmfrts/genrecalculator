@@ -7,25 +7,20 @@ Core.register('lastfm_username', function(sandbox) {
 
 		init: function() {
 
-			this.genres = [
-				"emo",
-				"indie",
-				"alternative",
-				"rock",
-				"eletronic",
-				"hard-rock",
-				"k-pop"
-			];
+			this.genres = sandbox.x("genres");
 
 			this.entry = document.getElementById('username');
 			this.genreText = "How much <genre> you are?";
 			this.selectedGenre = 0;
+			this.selectInput = document.getElementById('genre');
 			this.genreTextElem = document.getElementById('genre_text');
 
 			this.addGenreListeners();
+			this.addGenresToSelect();
 
 			var form = document.getElementById('calculator');
 			form.addEventListener('submit', this.onSubmit.bind(this));
+			this.selectInput.addEventListener('change', this.onGenreChange.bind(this));
 
 			sandbox.listen('read_cookie_username', this.handleCookieUsername.bind(this));
 		},
@@ -52,12 +47,39 @@ Core.register('lastfm_username', function(sandbox) {
 			}
 		},
 
+		onGenreChange: function(e) {
+
+			var val = e.target.value;
+
+			this.selectedGenre = val;
+
+			this.updateGenreTextElem();
+		},
+
 		addGenreListeners: function() {
 			var prev = document.getElementById('prev_genre');
 			var next = document.getElementById('next_genre');
 
 			prev.addEventListener('click', this.prevGenre.bind(this));
 			next.addEventListener('click', this.nextGenre.bind(this));
+		},
+
+		addGenresToSelect: function() {
+
+			var self = this;
+
+			var i = 0;
+			this.genres.forEach(function() {
+
+				var option = document.createElement('option');
+
+				option.value = i;
+				option.innerHTML = self.genres[i];
+
+				self.selectInput.appendChild(option);
+
+				i++;
+			});
 		},
 
 		handleCookieUsername: function(username) {
@@ -72,6 +94,7 @@ Core.register('lastfm_username', function(sandbox) {
 			else
 				this.selectedGenre = this.genres.length-1;
 
+			this.updateSelectInput();
 			this.updateGenreTextElem('prev');
 		},
 
@@ -82,6 +105,7 @@ Core.register('lastfm_username', function(sandbox) {
 			else
 				this.selectedGenre = 0;
 
+			this.updateSelectInput();
 			this.updateGenreTextElem('next');
 		},
 
@@ -101,6 +125,14 @@ Core.register('lastfm_username', function(sandbox) {
 				sandbox.x("Velocity")(self.genreTextElem, {opacity: 1}, 200);
 
 			}, 200);
+		},
+
+		updateSelectInput: function() {
+
+			var selected = this.selectInput.children[this.selectedGenre + 1];
+
+			this.selectInput.value = this.selectedGenre;
+			selected.setAttribute('selected', 'true');
 		},
 
 		destroy: function() {

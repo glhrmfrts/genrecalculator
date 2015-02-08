@@ -5,7 +5,7 @@
 	<meta property="og:title" content="Genre Calculator">
 	<meta property="og:description" content="Discover how much you are of your favorite music genre">
 	<meta property="og:image" content="http://glhrmfrts.github.io/genrecalculator/assets/img/og_image.png">
-	<title>Emo calculator</title>
+	<title>Genre calculator</title>
 	<link rel="stylesheet" href="assets/stylesheets/screen.css">
 	<link rel="stylesheet" href="assets/stylesheets/icon.min.css">
 	<link rel="stylesheet" href="assets/stylesheets/button.min.css">
@@ -46,11 +46,14 @@
 			<div class="jumbotron">
 				<h1 align="center">
 					<span id="prev_genre" class="genre"><i class="angle double left icon"></i></span>
-						<span id="genre_text">How much emo you are?</span>
+						<span id="genre_text">How much pop you are?</span>
 					<span id="next_genre" class="genre"><i class="angle double right icon"></i></span>
 				</h1>
 				<form name="calculator" id="calculator" action="">
 					<input type="text" name="username" id="username" class="form-control input-lg" placeholder="Your last.fm username">
+					<select name="genre" id="genre" class="form-control input-lg">
+						<option value="">Genre</option>
+					</select>
 					<br>
 					<button class="btn btn-primary btn-lg btn-block" id="submit_username">Calculate</button>
 				</form>
@@ -62,6 +65,10 @@
 	<div id="result" class="container">
 	</div>
 </main>
+<div class="background">
+	<div class="overlay">
+	</div>
+</div>
 <footer id="footer">
 	<div class="container" style="text-align:center; margin-top: 20px;">
 		<small> &copy; 2015 - glhrmfrts | <a href="http://youtu.be/yX8yrOAjfKM?t=1m26s" style="color:#fff;" target="_blank">I hope you have cookies enabled.</a></small>
@@ -72,6 +79,7 @@
 <script src="js/lib/velocity.min.js"></script>
 <script src="js/extensions.js"></script>
 <script src="js/modules/cookie_helper.js"></script>
+<script src="js/modules/background.js"></script>
 <script src="js/modules/lastfm_username.js"></script>
 <script src="js/modules/genre_calculator.js"></script>
 <script src="js/modules/html_actuator.js"></script>

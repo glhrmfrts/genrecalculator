@@ -198,6 +198,7 @@ Core.register('html_actuator', function(sandbox) {
 			var self = this;
 
 			this.html.container.innerHTML = "";
+			this.html.container.classList.add('ready');
 			this.html.container.appendChild(this.html.title);
 			this.html.container.appendChild(document.createElement('hr'));
 			this.html.container.appendChild(this.html.artistsTitle);
@@ -211,7 +212,7 @@ Core.register('html_actuator', function(sandbox) {
 			this.html.artistsRecomendColumns.forEach(function(col) {
 
 				self.html.artistsRecomendations.appendChild(col);
-			})
+			});
 
 			this.html.container.appendChild(this.html.artistsCompared);
 			this.html.container.appendChild(this.html.artistsRecomendations);
