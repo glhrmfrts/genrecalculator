@@ -11,24 +11,24 @@ html, body {
 
 /* line 15, ../sass/screen.scss */
 body {
-  background-image: url(https://unsplash.imgix.net/photo-1416512107527-34cebecbac33?q=75&fm=jpg&s=58eff2b3daa3b797fb23fcd511d843ca);
+  background-color: #222 !important;
   color: #fff !important;
   background-attachment: fixed;
 }
 
-/* line 21, ../sass/screen.scss */
+/* line 22, ../sass/screen.scss */
 .background {
   position: absolute;
   top: 0;
   left: 0;
   z-index: -2;
-  width: 120vw;
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
-/* line 31, ../sass/screen.scss */
+/* line 32, ../sass/screen.scss */
 .background .img-container {
-  width: 15%;
+  width: 20.6%;
   height: 35%;
   display: inline-block;
   margin: -5px;
@@ -37,7 +37,7 @@ body {
   vertical-align: middle;
   overflow: hidden;
 }
-/* line 42, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 .background .img-container img {
   width: 10%;
   min-height: 100%;
@@ -48,13 +48,13 @@ body {
   -webkit-transition: all 0.375s ease;
   transition: all 0.375s ease;
 }
-/* line 50, ../sass/screen.scss */
+/* line 51, ../sass/screen.scss */
 .background .img-container img.show {
   opacity: 1;
   padding: 0;
   width: 140%;
 }
-/* line 59, ../sass/screen.scss */
+/* line 60, ../sass/screen.scss */
 .background .overlay {
   position: absolute;
   width: 120vw;
@@ -63,23 +63,23 @@ body {
   background-color: rgba(0, 0, 0, 0.375);
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 .jumbotron {
   border-radius: 0px 0px 10px 10px !important;
   background: transparent !important;
 }
-/* line 72, ../sass/screen.scss */
+/* line 73, ../sass/screen.scss */
 .jumbotron h1 {
   font-size: 44px !important;
 }
-/* line 78, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 .jumbotron #calculator .form-control {
   margin-left: 0px;
   margin-right: 0px;
   margin-bottom: 10px;
   display: inline-block;
 }
-/* line 85, ../sass/screen.scss */
+/* line 86, ../sass/screen.scss */
 .jumbotron #calculator .form-control:first-child {
   -moz-border-radius: 5px 0px 0px 5px;
   -webkit-border-radius: 5px;
@@ -88,7 +88,7 @@ body {
   margin-right: -2px;
   border-right: 1px solid #ddd;
 }
-/* line 93, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 .jumbotron #calculator .form-control#genre {
   -moz-border-radius: 0px 5px 5px 0px;
   -webkit-border-radius: 0px;
@@ -98,33 +98,33 @@ body {
   border-left: none;
 }
 
-/* line 103, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 .container {
   max-width: 920px !important;
 }
 
-/* line 107, ../sass/screen.scss */
+/* line 108, ../sass/screen.scss */
 .genre {
   cursor: pointer;
 }
-/* line 109, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 .genre#prev_genre {
   float: left;
 }
-/* line 112, ../sass/screen.scss */
+/* line 113, ../sass/screen.scss */
 .genre#next_genre {
   float: right;
 }
-/* line 115, ../sass/screen.scss */
+/* line 116, ../sass/screen.scss */
 .genre:hover {
   opacity: 0.7;
 }
-/* line 118, ../sass/screen.scss */
+/* line 119, ../sass/screen.scss */
 .genre:active {
   opacity: 0.3;
 }
 
-/* line 123, ../sass/screen.scss */
+/* line 124, ../sass/screen.scss */
 .artist-col {
   padding: 10px;
   margin: 10px 0px;
@@ -134,67 +134,67 @@ body {
   cursor: default;
   color: #fff;
 }
-/* line 131, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
 .artist-col img {
   width: 100%;
 }
-/* line 134, ../sass/screen.scss */
+/* line 135, ../sass/screen.scss */
 .artist-col:hover {
   background: #2e6aa4;
 }
-/* line 137, ../sass/screen.scss */
+/* line 138, ../sass/screen.scss */
 .artist-col a {
   color: #fff;
   text-decoration: none !important;
 }
-/* line 140, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 .artist-col a:hover {
   color: #ddd;
 }
-/* line 143, ../sass/screen.scss */
+/* line 144, ../sass/screen.scss */
 .artist-col a:active {
   color: #bbb;
 }
-/* line 147, ../sass/screen.scss */
+/* line 148, ../sass/screen.scss */
 .artist-col .youtube {
   color: #b11000;
   font-size: 20px;
 }
 
-/* line 153, ../sass/screen.scss */
+/* line 154, ../sass/screen.scss */
 #result {
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 157, ../sass/screen.scss */
+/* line 158, ../sass/screen.scss */
 #result.ready {
   min-height: 100vh;
 }
 
-/* line 163, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 .artists-compared, .artists-recomendations {
   float: left;
   width: 100%;
   border-radius: 10px;
 }
 
-/* line 169, ../sass/screen.scss */
+/* line 170, ../sass/screen.scss */
 .artists-compared {
   opacity: 1;
 }
 
-/* line 173, ../sass/screen.scss */
+/* line 174, ../sass/screen.scss */
 .artists-recomendations {
   display: none;
   opacity: 0;
 }
 
-/* line 178, ../sass/screen.scss */
+/* line 179, ../sass/screen.scss */
 .share {
   float: right;
   margin-top: -5px;
 }
 
-/* line 183, ../sass/screen.scss */
+/* line 184, ../sass/screen.scss */
 .try-again, .artists-switch {
   float: right;
   text-decoration: none !important;
@@ -205,37 +205,42 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
-  /* line 195, ../sass/screen.scss */
+  /* line 196, ../sass/screen.scss */
   .artist-col img {
     height: 160px;
   }
-  /* line 198, ../sass/screen.scss */
+  /* line 199, ../sass/screen.scss */
   .artist-col .lastfm_icon {
     height: 20px;
     width: 20px;
     float: right;
   }
-  /* line 203, ../sass/screen.scss */
+  /* line 204, ../sass/screen.scss */
   .artist-col .lastfm_icon_recomend {
     height: 20px;
     width: 20px;
   }
 }
 @media screen and (max-width: 1023px) {
-  /* line 213, ../sass/screen.scss */
+  /* line 214, ../sass/screen.scss */
   .artist-col img {
     height: 240px;
   }
-  /* line 216, ../sass/screen.scss */
+  /* line 217, ../sass/screen.scss */
   .artist-col .lastfm_icon {
     height: 40px;
     width: 40px;
     float: right;
     margin-top: -20px;
   }
-  /* line 222, ../sass/screen.scss */
+  /* line 223, ../sass/screen.scss */
   .artist-col .lastfm_icon_recomend {
     height: 20px;
     width: 20px;
+  }
+
+  /* line 231, ../sass/screen.scss */
+  .background .img-container {
+    width: 33.9%;
   }
 }

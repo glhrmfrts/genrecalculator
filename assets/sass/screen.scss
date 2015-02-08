@@ -13,7 +13,8 @@ html, body {
 }
 
 body {
-	background-image: url(https://unsplash.imgix.net/photo-1416512107527-34cebecbac33?q=75&fm=jpg&s=58eff2b3daa3b797fb23fcd511d843ca);
+	//background-image: url(https://unsplash.imgix.net/photo-1416512107527-34cebecbac33?q=75&fm=jpg&s=58eff2b3daa3b797fb23fcd511d843ca);
+	background-color:#222 !important;
 	color:#fff !important;
 	background-attachment:fixed;
 }
@@ -24,13 +25,13 @@ body {
 	top: 0;
 	left: 0;
 	z-index: -2;
-	width: 120vw;
+	width: 100vw;
 	height: 100vh;
 	overflow:hidden;
 
 	.img-container {
 
-		width: 15%;
+		width: 20.6%;
 		height: 35%;
 		display:inline-block;
 		margin:-5px;
@@ -222,6 +223,14 @@ body {
 		.lastfm_icon_recomend {
 			height: 20px;
 			width: 20px;
+		}
+	}
+
+	.background {
+
+		.img-container {
+
+			width: 33.9%;
 		}
 	}
 }
