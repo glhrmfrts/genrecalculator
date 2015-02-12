@@ -29,9 +29,8 @@ Core.register('background', function(s) {
 		showBackground: function() {
 
 			var self = this;
-			var i = 0;
 
-			var show = window.setInterval(function() {
+			/*var show = window.setInterval(function() {
 
 				if (i >= self.artists.length - 1) {
 
@@ -46,7 +45,7 @@ Core.register('background', function(s) {
 
 				i++;
 
-			}, 75);
+			}, 75);*/
 
 		},
 

@@ -26,8 +26,8 @@ Core.register('html_actuator', function(sandbox) {
 				artistsRecomendations: document.createElement('div'),
 				artistsColumns: [],
 				artistsRecomendColumns: [],
-				tryAgain: '<a href="" class="try-again btn btn-default" title="Try again"><i class="repeat icon"></i></a>',
-				discover: '<button class="artists-switch btn btn-default" id="artists-switch" title="Discover"><i class="plus icon"></i></button>',
+				tryAgain: '<a href="" class="try-again ui button red blue inverted circular" title="Try again"><i class="repeat icon"></i></a>',
+				discover: '<button class="artists-switch ui button teal inverted circular" id="artists-switch" title="Discover"><i class="plus icon"></i></button>',
 				lastfm_icon: 'https://cdn0.iconfinder.com/data/icons/yooicons_set01_socialbookmarks/512/social_lastfm_box_red.png',
 				share: ' <div class="share"><div class="ui facebook button" id="fb_share"><i class="facebook icon"></i> Facebook</div></div>'
 			};
@@ -115,8 +115,10 @@ Core.register('html_actuator', function(sandbox) {
 				var col = document.createElement('div');
 				col.className = 'col-xs-12 col-sm-6 col-md-3';
 
-				var inner = document.createElement('div');
+				var inner = document.createElement('a');
 				inner.className = 'artist-col';
+				inner.href = artist.url;
+				inner.title = 'Open in last.fm';
 
 				var thumb = new Image();
 				thumb.src = artist.image[3]['#text'];
@@ -131,12 +133,6 @@ Core.register('html_actuator', function(sandbox) {
 				var playCount = document.createElement('span');
 				playCount.innerText = "Scrobbles: "+ artist.playcount;
 
-				var lastfm = document.createElement('a');
-				lastfm.href = artist.url;
-				lastfm.title = "Open in last.fm";
-				lastfm.target = "_blank";
-				lastfm.innerHTML = '<img src='+ self.html.lastfm_icon +' class="lastfm_icon">';
-				playCount.appendChild(lastfm);
 				inner.appendChild(playCount);
 
 				col.appendChild(inner);

@@ -6,11 +6,11 @@
 	<meta property="og:description" content="Discover how much you are of your favorite music genre">
 	<meta property="og:image" content="http://glhrmfrts.github.io/genrecalculator/assets/img/og_image.png">
 	<title>Genre calculator</title>
-	<link rel="stylesheet" href="assets/stylesheets/screen.css">
-	<link rel="stylesheet" href="assets/stylesheets/icon.min.css">
-	<link rel="stylesheet" href="assets/stylesheets/button.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="assets/stylesheets/icon.min.css">
+	<link rel="stylesheet" href="assets/stylesheets/button.min.css">
+	<link rel="stylesheet" href="assets/stylesheets/screen.css">
 </head>
 <body>
 <script>
@@ -50,12 +50,12 @@
 					<span id="next_genre" class="genre"><i class="angle double right icon"></i></span>
 				</h1>
 				<form name="calculator" id="calculator" action="">
-					<input type="text" name="username" id="username" class="form-control input-lg" placeholder="Your last.fm username">
+					<input type="text" name="username" id="username" class="form-control input-lg" value="Your last.fm username">
 					<select name="genre" id="genre" class="form-control input-lg">
 						<option value="">Genre</option>
 					</select>
 					<br>
-					<button class="btn btn-primary btn-lg btn-block" id="submit_username">Calculate</button>
+					<button class="ui button blue btn-block" id="submit_username">Calculate</button>
 				</form>
 			</div>
 		</div>

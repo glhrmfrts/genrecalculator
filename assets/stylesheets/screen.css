@@ -17,6 +17,28 @@ body {
 }
 
 /* line 22, ../sass/screen.scss */
+.form-control {
+  border-radius: 2px;
+  color: #fff;
+  background: transparent;
+}
+
+/* line 31, ../sass/screen.scss */
+select.form-control option {
+  color: #000;
+}
+/* line 35, ../sass/screen.scss */
+select.form-control option[selected] {
+  color: #fff;
+}
+
+/* line 42, ../sass/screen.scss */
+.circular {
+  padding-left: 20px !important;
+  padding-right: 10px !important;
+}
+
+/* line 48, ../sass/screen.scss */
 .background {
   position: absolute;
   top: 0;
@@ -26,7 +48,7 @@ body {
   height: 100vh;
   overflow: hidden;
 }
-/* line 32, ../sass/screen.scss */
+/* line 58, ../sass/screen.scss */
 .background .img-container {
   width: 20.6%;
   height: 35%;
@@ -37,24 +59,13 @@ body {
   vertical-align: middle;
   overflow: hidden;
 }
-/* line 43, ../sass/screen.scss */
+/* line 69, ../sass/screen.scss */
 .background .img-container img {
-  width: 10%;
+  width: 120%;
   min-height: 100%;
-  padding: 45%;
-  opacity: 0;
-  -moz-transition: all 0.375s ease;
-  -o-transition: all 0.375s ease;
-  -webkit-transition: all 0.375s ease;
-  transition: all 0.375s ease;
+  -webkit-animation: fadeIn 0.5s ease;
 }
-/* line 51, ../sass/screen.scss */
-.background .img-container img.show {
-  opacity: 1;
-  padding: 0;
-  width: 140%;
-}
-/* line 60, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 .background .overlay {
   position: absolute;
   width: 120vw;
@@ -63,138 +74,151 @@ body {
   background-color: rgba(0, 0, 0, 0.375);
 }
 
-/* line 70, ../sass/screen.scss */
+/* line 87, ../sass/screen.scss */
 .jumbotron {
   border-radius: 0px 0px 10px 10px !important;
   background: transparent !important;
 }
-/* line 73, ../sass/screen.scss */
+/* line 90, ../sass/screen.scss */
 .jumbotron h1 {
   font-size: 44px !important;
 }
-/* line 79, ../sass/screen.scss */
+/* line 96, ../sass/screen.scss */
 .jumbotron #calculator .form-control {
   margin-left: 0px;
   margin-right: 0px;
   margin-bottom: 10px;
   display: inline-block;
 }
-/* line 86, ../sass/screen.scss */
+/* line 103, ../sass/screen.scss */
 .jumbotron #calculator .form-control:first-child {
-  -moz-border-radius: 5px 0px 0px 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px 0px 0px 5px;
+  -moz-border-radius: 2px 0px 0px 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px 0px 0px 2px;
   width: 79.8%;
   margin-right: -2px;
   border-right: 1px solid #ddd;
 }
-/* line 94, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 .jumbotron #calculator .form-control#genre {
-  -moz-border-radius: 0px 5px 5px 0px;
+  -moz-border-radius: 0px 2px 2px 0px;
   -webkit-border-radius: 0px;
-  border-radius: 0px 5px 5px 0px;
+  border-radius: 0px 2px 2px 0px;
   width: 20%;
   margin-left: -2px;
   border-left: none;
 }
+/* line 120, ../sass/screen.scss */
+.jumbotron #calculator #submit_username {
+  font-size: 18px;
+}
 
-/* line 104, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
 .container {
   max-width: 920px !important;
 }
 
-/* line 108, ../sass/screen.scss */
+/* line 130, ../sass/screen.scss */
 .genre {
   cursor: pointer;
 }
-/* line 110, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
 .genre#prev_genre {
   float: left;
 }
-/* line 113, ../sass/screen.scss */
+/* line 135, ../sass/screen.scss */
 .genre#next_genre {
   float: right;
 }
-/* line 116, ../sass/screen.scss */
+/* line 138, ../sass/screen.scss */
 .genre:hover {
   opacity: 0.7;
 }
-/* line 119, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 .genre:active {
   opacity: 0.3;
 }
 
-/* line 124, ../sass/screen.scss */
+/* line 148, ../sass/screen.scss */
+#artists-heading .button {
+  margin-left: 10px;
+}
+
+/* line 154, ../sass/screen.scss */
 .artist-col {
-  padding: 10px;
   margin: 10px 0px;
-  background: #337ab7;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  cursor: default;
+  color: #fff;
+  text-decoration: none;
+  float: left;
+  display: block;
+}
+/* line 162, ../sass/screen.scss */
+.artist-col .img-thumbnail {
+  width: 100%;
+  background: transparent;
+}
+/* line 167, ../sass/screen.scss */
+.artist-col:hover {
+  text-decoration: none;
   color: #fff;
 }
-/* line 132, ../sass/screen.scss */
-.artist-col img {
-  width: 100%;
+/* line 172, ../sass/screen.scss */
+.artist-col:hover img {
+  border-color: #528abc;
 }
-/* line 135, ../sass/screen.scss */
-.artist-col:hover {
-  background: #2e6aa4;
-}
-/* line 138, ../sass/screen.scss */
+/* line 178, ../sass/screen.scss */
 .artist-col a {
   color: #fff;
   text-decoration: none !important;
 }
-/* line 141, ../sass/screen.scss */
+/* line 181, ../sass/screen.scss */
 .artist-col a:hover {
   color: #ddd;
 }
-/* line 144, ../sass/screen.scss */
+/* line 184, ../sass/screen.scss */
 .artist-col a:active {
   color: #bbb;
 }
-/* line 148, ../sass/screen.scss */
+/* line 188, ../sass/screen.scss */
 .artist-col .youtube {
   color: #b11000;
   font-size: 20px;
 }
 
-/* line 154, ../sass/screen.scss */
+/* line 194, ../sass/screen.scss */
 #result {
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 158, ../sass/screen.scss */
+/* line 198, ../sass/screen.scss */
 #result.ready {
   min-height: 100vh;
 }
 
-/* line 164, ../sass/screen.scss */
+/* line 204, ../sass/screen.scss */
 .artists-compared, .artists-recomendations {
   float: left;
   width: 100%;
   border-radius: 10px;
 }
 
-/* line 170, ../sass/screen.scss */
+/* line 210, ../sass/screen.scss */
 .artists-compared {
   opacity: 1;
 }
 
-/* line 174, ../sass/screen.scss */
+/* line 214, ../sass/screen.scss */
 .artists-recomendations {
   display: none;
   opacity: 0;
 }
 
-/* line 179, ../sass/screen.scss */
+/* line 219, ../sass/screen.scss */
 .share {
   float: right;
   margin-top: -5px;
 }
 
-/* line 184, ../sass/screen.scss */
+/* line 224, ../sass/screen.scss */
 .try-again, .artists-switch {
   float: right;
   text-decoration: none !important;
@@ -205,42 +229,52 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
-  /* line 196, ../sass/screen.scss */
+  /* line 236, ../sass/screen.scss */
   .artist-col img {
     height: 160px;
   }
-  /* line 199, ../sass/screen.scss */
+  /* line 239, ../sass/screen.scss */
   .artist-col .lastfm_icon {
     height: 20px;
     width: 20px;
     float: right;
   }
-  /* line 204, ../sass/screen.scss */
+  /* line 244, ../sass/screen.scss */
   .artist-col .lastfm_icon_recomend {
     height: 20px;
     width: 20px;
   }
 }
 @media screen and (max-width: 1023px) {
-  /* line 214, ../sass/screen.scss */
+  /* line 254, ../sass/screen.scss */
   .artist-col img {
     height: 240px;
   }
-  /* line 217, ../sass/screen.scss */
+  /* line 257, ../sass/screen.scss */
   .artist-col .lastfm_icon {
     height: 40px;
     width: 40px;
     float: right;
     margin-top: -20px;
   }
-  /* line 223, ../sass/screen.scss */
+  /* line 263, ../sass/screen.scss */
   .artist-col .lastfm_icon_recomend {
     height: 20px;
     width: 20px;
   }
 
-  /* line 231, ../sass/screen.scss */
+  /* line 271, ../sass/screen.scss */
   .background .img-container {
     width: 33.9%;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }

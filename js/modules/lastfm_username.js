@@ -22,6 +22,9 @@ Core.register('lastfm_username', function(sandbox) {
 			form.addEventListener('submit', this.onSubmit.bind(this));
 			this.selectInput.addEventListener('change', this.onGenreChange.bind(this));
 
+			this.entry.addEventListener('blur', this.putPlaceholder);
+			this.entry.addEventListener('focus', this.removePlaceholder);
+
 			sandbox.listen('read_cookie_username', this.handleCookieUsername.bind(this));
 		},
 
@@ -29,14 +32,21 @@ Core.register('lastfm_username', function(sandbox) {
 
 			e.preventDefault();
 
-			var btn = document.getElementById('submit_username');
-			btn.setAttribute('disabled', "true");
-			btn.innerText = "Calculating..."
-
 			var username = this.entry.value;
-			var genre = this.genres[this.selectedGenre];
 
-			if (username != "") {
+			if (username == '' || username == 'Your last.fm username') {
+
+				this.entry.focus();
+				this.entry.style.border = '3px solid red';
+
+			} else {
+
+				var btn = document.getElementById('submit_username');
+				btn.setAttribute('disabled', "true");
+				btn.innerText = "Calculating..."
+
+				var genre = this.genres[this.selectedGenre];
+
 				sandbox.notify({
 					type: 'lastfm_username_entry',
 					data: {
@@ -44,6 +54,22 @@ Core.register('lastfm_username', function(sandbox) {
 						genre: genre
 					}
 				});
+			}
+		},
+
+		putPlaceholder: function(e) {
+
+			if (this.value == '') {
+
+				this.value = 'Your last.fm username';
+			}
+		},
+
+		removePlaceholder: function(e) {
+
+			if (this.value == 'Your last.fm username') {
+
+				this.value = '';
 			}
 		},
 
@@ -132,7 +158,6 @@ Core.register('lastfm_username', function(sandbox) {
 			var selected = this.selectInput.children[this.selectedGenre + 1];
 
 			this.selectInput.value = this.selectedGenre;
-			selected.setAttribute('selected', 'true');
 		},
 
 		destroy: function() {
