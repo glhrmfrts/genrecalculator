@@ -12,7 +12,7 @@ Core.extend("XHR", function(url, cb, error, params) {
 		}
 	}
 
-	xhr.open('GET', url, false);
+	xhr.open('GET', url, true);
 	xhr.onreadystatechange = function() {
 
 		if (xhr.readyState == 4 && xhr.status == 200) {
